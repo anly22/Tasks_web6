@@ -8,11 +8,17 @@ def add_task(title: str) -> None:
 
 
 def remove_task(index: int) -> None:
-    _DB.pop(index)
-
-
+    if type(index) is int and index in range(len(_DB)):
+        _DB.pop(index)
+    else:
+        print("Incorrect index")
+        
+        
 def mark_task_completed(index: int, completed: bool) -> None:
-    _DB[index]["completed"] = completed
+    if type(index) is int and index in range(len(_DB)):
+        _DB[index]["completed"] = completed
+    else:
+        print("Incorrect index")
 
 
 def get_all_tasks() -> List[Tuple[str]]:
