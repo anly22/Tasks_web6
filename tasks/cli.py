@@ -36,3 +36,8 @@ def handle_interrupt():
         if user_second_input == "y":
             save_to_file(get_all_tasks(), "export")
             return True
+        else:
+            print("Exiting without export tasks..")
+            return True
+    else:
+        print("Exit is cancelled")
